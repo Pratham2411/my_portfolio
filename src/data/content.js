@@ -35,7 +35,7 @@ export const nav = [
 
 export const socials = [
   ['GitHub', 'https://github.com/Pratham2411', Github],
-  ['LinkedIn', 'https://www.linkedin.com/in/prathamraj2411', Linkedin],
+  ['LinkedIn', 'https://www.linkedin.com/in/prathamraj', Linkedin],
   ['Email', 'mailto:prathamraj2411@gmail.com', Mail],
 ];
 
@@ -47,11 +47,11 @@ export const aboutStats = [
 ];
 
 export const skills = [
-  ['Languages', Code2, ['C++', 'Java', 'JavaScript']],
-  ['Frontend', Layers3, ['HTML', 'CSS', 'React', 'Tailwind CSS', 'Next.js']],
-  ['Backend', Database, ['Node.js', 'Express.js', 'MongoDB', 'PostgreSQL']],
-  ['Core CS', Braces, ['DSA', 'OOP', 'DBMS', 'OS']],
-  ['Tools', Terminal, ['Git', 'GitHub', 'VS Code', 'Linux']],
+  ['Languages', Code2, ['C/C++', 'Python', 'Java', 'JavaScript', 'TypeScript']],
+  ['Frontend', Layers3, ['HTML5', 'CSS3', 'React.js', 'Tailwind CSS', 'Next.js']],
+  ['Backend & Systems', Database, ['Node.js', 'Express.js', 'RESTful APIs', 'Socket Programming']],
+  ['Core CS', Braces, ['DSA', 'OOP', 'OS', 'Networks', 'System Design', 'Multi-threading']],
+  ['Tools & Cloud', Terminal, ['Git', 'Vercel', 'MongoDB', 'MySQL', 'Linux']],
   ['Comfort Zone', Cpu, ['Problem Solving', 'Competitive Programming', 'System Thinking']],
 ];
 
@@ -60,18 +60,18 @@ export const projects = [
     title: 'NIT Patna Marketplace',
     icon: Database,
     shot: 'shot-dashboard',
-    text: 'A full-stack e-commerce marketplace tailored for NIT Patna students to buy, sell, and trade items securely on campus.',
-    features: ['User authentication', 'Product listings', 'Search/filtering'],
-    tags: ['React', 'Node.js', 'Full-stack'],
+    text: 'A full-stack campus marketplace using the MERN stack. Secured via JWT with Role-Based Access Control to serve 1,000+ university students.',
+    features: ['Resend API & OTPs', 'Cloudinary CDN (30% faster)', 'Real-time PWA Chat'],
+    tags: ['React', 'Node.js', 'MongoDB'],
     github: 'https://github.com/Pratham2411/nit_patna_market',
     live: 'https://nit-patna-market.vercel.app'
   },
   {
-    title: 'Custom AI Engine (my_ai)',
+    title: 'C++ Vector Database & RAG Engine',
     icon: Bot,
     shot: 'shot-neural',
-    text: 'An artificial intelligence engine developed in C++ to demonstrate core algorithmic efficiency and low-level system design.',
-    features: ['C++ architecture', 'Optimized logic', 'Core CS principles'],
+    text: 'A multi-threaded C++ Vector Database using HNSW and KD-Tree algorithms to achieve O(log N) search complexity across 10,000+ embeddings.',
+    features: ['Local RAG Pipeline', 'Sub-2s responses via Ollama', 'cpp-httplib REST API'],
     tags: ['C++', 'AI/ML', 'Algorithms'],
     github: 'https://github.com/Pratham2411/my_ai',
     live: null
@@ -81,7 +81,7 @@ export const projects = [
     icon: Activity,
     shot: 'shot-circuit',
     text: 'A network utility for capturing and analyzing packet data across networks to monitor traffic and ensure security.',
-    features: ['Packet sniffing', 'Protocol analysis', 'Network monitoring'],
+    features: ['Packet sniffing', 'Protocol analysis', 'Deep Packet Inspection'],
     tags: ['Python', 'Networking', 'Security'],
     github: 'https://github.com/Pratham2411/Packet_analyzer',
     live: null
@@ -110,28 +110,28 @@ export const projects = [
 
 export const cpStats = [
   ['Total Problems', '1,500+', 'across 4 platforms'],
-  ['CF Max Rating', '1,138', 'newbie'],
-  ['LeetCode', '1,901', 'Knight'],
+  ['CF Max Rating', '1,250+', 'Pupil'],
+  ['LeetCode', '2,000+', 'Knight Badge'],
 ];
 
 export const profiles = [
-  ['LeetCode', '@prathamraj2411', 'https://leetcode.com/u/prathamraj2411/'],
+  ['LeetCode', '@prathamraj2411', 'https://leetcode.com/prathamraj2411'],
   ['Codeforces', '@prathamraj2411', 'https://codeforces.com/profile/prathamraj2411'],
   ['CodeChef', '@prathamraj2411', 'https://www.codechef.com/users/prathamraj2411'],
-  ['GeeksforGeeks', '@prathamraj2411', 'https://www.geeksforgeeks.org/profile/prathamraj2411'],
+  ['GeeksforGeeks', '@prathamr0joj', 'https://www.geeksforgeeks.org/user/prathamr0joj/'],
 ];
 
 export const achievements = [
-  'Winner of Abhiyantriki 4.0',
-  'Second Position in Abhiyanta 3.0',
-  'State-level debate competition winner',
-  'Rank under 100 in Codeforces Div 2 contest',
-  'Hackathon winner',
-  'Solved 1500+ DSA problems',
+  'National Science Olympiad (NSO) – Gold Medalist',
+  'Ranked in the Top 15 competitive programmers institution-wide at NIT Patna on Codolio',
+  'Secured 1st place at the Hackslash College Hackathon',
+  'Shortlisted for the Digital Specialist Engineer (DSE) role at Infosys',
+  'District Topper (Class 12th)',
+  'Solved 1500+ DSA & CP problems',
 ];
 
 export const experience = [
-  ['Sankalp (NSS)', BookOpen, 'Taught more than 500 students and mentored juniors through education-focused outreach.'],
-  ['GDSC', Briefcase, 'Member and active contributor in technical learning, events, and developer community work.'],
-  ['Tesla Club', Cpu, 'Participated in electrical and technical activities connecting core EE with practical systems.'],
+  ['Web Developer Intern', Code2, 'Spearheaded React components (reducing CLS by 15%) and integrated REST APIs to cut latency by 20% at InternPe.'],
+  ['Campus Ambassador', BookOpen, 'Hosted DSA workshops for HackerRank & GfG, cultivating algorithmic thinking for university peers.'],
+  ['Educational Volunteer (NSS) & GDSC', Users, 'Mentored 500+ students and architected community software solutions.'],
 ];
