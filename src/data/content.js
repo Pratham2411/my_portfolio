@@ -12,6 +12,7 @@ import {
   Layers3,
   Linkedin,
   Mail,
+  Instagram,
   Sparkles,
   Terminal,
   Trophy,
@@ -37,6 +38,7 @@ export const socials = [
   ['GitHub', 'https://github.com/Pratham2411', Github],
   ['LinkedIn', 'https://www.linkedin.com/in/prathamraj', Linkedin],
   ['Email', 'mailto:prathamraj2411@gmail.com', Mail],
+  ['Instagram', 'https://www.instagram.com/pratham_raj_2411', Instagram],
 ];
 
 export const aboutStats = [
