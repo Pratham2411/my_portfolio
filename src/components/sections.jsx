@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { GitHubCalendar } from 'react-github-calendar';
 import { Download, ArrowRight, Github, ExternalLink, Award, Trophy, ArrowUp, Send } from 'lucide-react';
 import { go, Card, reveal } from './ui';
 import {
@@ -147,9 +148,6 @@ export function ProjectsSection() {
 }
 
 export function CPSection() {
-  // Static GitHub contribution graph simulation since it was hardcoded before
-  const graph = Array.from({ length: 112 }, (_, i) => (i * 11 + i * i) % 5);
-
   return (
     <Section id="cp" label="competitive_programming" title={<>Where I <span>compete.</span></>} subtitle="Live-profile inspired cards for ratings, ranks, and solved counts.">
       <div className="cp-stat-grid">
@@ -175,7 +173,17 @@ export function CPSection() {
           <h3>GitHub contribution graph</h3>
           <a href="https://github.com/Pratham2411" target="_blank" rel="noreferrer">github.com/Pratham2411</a>
         </div>
-        <div className="graph">{graph.map((level, i) => <b key={i} className={`level-${level}`} />)}</div>
+        <div style={{ marginTop: '24px', overflowX: 'auto', paddingBottom: '10px' }}>
+          <GitHubCalendar 
+            username="Pratham2411" 
+            colorScheme="dark"
+            blockSize={16}
+            blockMargin={8}
+            theme={{
+              dark: ['rgba(255, 255, 255, 0.045)', 'rgba(16, 231, 176, 0.2)', 'rgba(16, 231, 176, 0.38)', 'rgba(4, 217, 255, 0.44)', 'rgba(16, 231, 176, 0.72)']
+            }}
+          />
+        </div>
       </Card>
     </Section>
   );
