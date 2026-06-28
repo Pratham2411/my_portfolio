@@ -118,7 +118,7 @@ export const profiles = [
   ['LeetCode', '@prathamraj2411', 'https://leetcode.com/prathamraj2411'],
   ['Codeforces', '@prathamraj2411', 'https://codeforces.com/profile/prathamraj2411'],
   ['CodeChef', '@prathamraj2411', 'https://www.codechef.com/users/prathamraj2411'],
-  ['GeeksforGeeks', '@prathamr0joj', 'https://www.geeksforgeeks.org/user/prathamr0joj/'],
+  ['GeeksforGeeks', '@prathamraj2411', 'https://www.geeksforgeeks.org/profile/prathamraj2411'],
 ];
 
 export const achievements = [
