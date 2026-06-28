@@ -2,15 +2,15 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Download, ArrowRight, Github, ExternalLink, Award, Trophy, ArrowUp, Send } from 'lucide-react';
 import { go, Card, reveal } from './ui';
-import { 
-  socials, 
-  aboutStats, 
-  skills, 
-  projects, 
-  cpStats, 
-  profiles, 
-  achievements, 
-  experience 
+import {
+  socials,
+  aboutStats,
+  skills,
+  projects,
+  cpStats,
+  profiles,
+  achievements,
+  experience
 } from '../data/content';
 import profilePic from '../../assets/images/profile.jpeg';
 import resumePdf from '../../assets/resume/pratham_resume.pdf';
@@ -149,7 +149,7 @@ export function ProjectsSection() {
 export function CPSection() {
   // Static GitHub contribution graph simulation since it was hardcoded before
   const graph = Array.from({ length: 112 }, (_, i) => (i * 11 + i * i) % 5);
-  
+
   return (
     <Section id="cp" label="competitive_programming" title={<>Where I <span>compete.</span></>} subtitle="Live-profile inspired cards for ratings, ranks, and solved counts.">
       <div className="cp-stat-grid">
@@ -228,7 +228,7 @@ export function ContactSection() {
         </Card>
         <form className="form" action="https://api.web3forms.com/submit" method="POST">
           {/* Replace with your actual Web3Forms access key */}
-          <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE" />
+          <input type="hidden" name="access_key" value="3738a27d-ce0f-480e-8812-8f1efb629d11" />
           <input name="name" placeholder="Your name" required />
           <input name="email" type="email" placeholder="Email address" required />
           <textarea name="message" rows="6" placeholder="Message" required />
