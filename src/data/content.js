@@ -87,6 +87,16 @@ export const projects = [
     live: null
   },
   {
+    title: 'Interactive Question Sheet',
+    icon: BookOpen,
+    shot: 'shot-roadmap',
+    text: 'A structured, single-page application to manage and track programming questions organized by topics and subtopics.',
+    features: ['Drag-and-drop reordering', 'Zustand State Management', 'Real-time search'],
+    tags: ['React', 'Zustand', 'Vite'],
+    github: 'https://github.com/Pratham2411/interactive-question-sheet',
+    live: 'https://interactive-question-sheet-weld.vercel.app/'
+  },
+  {
     title: 'Frontend Mini Projects',
     icon: LayoutGrid,
     shot: 'shot-grid',
