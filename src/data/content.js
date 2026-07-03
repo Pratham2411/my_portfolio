@@ -22,11 +22,11 @@ import {
   LayoutGrid
 } from 'lucide-react';
 
-import marketImg from '../assets/images/projects/market.png';
-import vectorDbImg from '../assets/images/projects/vectordb.png';
-import sheetImg from '../assets/images/projects/sheet.png';
-import miniImg from '../assets/images/projects/mini.png';
-import portfolioImg from '../assets/images/projects/portfolio.png';
+import marketImg from '../assets/projects/market.png';
+import vectorDbImg from '../assets/projects/vectordb.png';
+import sheetImg from '../assets/projects/sheet.png';
+import miniImg from '../assets/projects/mini.png';
+import portfolioImg from '../assets/projects/portfolio.png';
 
 export const sections = ['home', 'about', 'skills', 'projects', 'cp', 'achievements', 'experience', 'contact'];
 export const nav = [
