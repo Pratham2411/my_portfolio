@@ -22,6 +22,12 @@ import {
   LayoutGrid
 } from 'lucide-react';
 
+import marketImg from '../assets/images/projects/market.png';
+import vectorDbImg from '../assets/images/projects/vectordb.png';
+import sheetImg from '../assets/images/projects/sheet.png';
+import miniImg from '../assets/images/projects/mini.png';
+import portfolioImg from '../assets/images/projects/portfolio.png';
+
 export const sections = ['home', 'about', 'skills', 'projects', 'cp', 'achievements', 'experience', 'contact'];
 export const nav = [
   ['Home', 'home'],
@@ -61,7 +67,7 @@ export const projects = [
   {
     title: 'NIT Patna Marketplace',
     icon: Database,
-    shot: 'shot-dashboard',
+    image: marketImg,
     text: 'A full-stack campus marketplace using the MERN stack. Secured via JWT with Role-Based Access Control to serve 1,000+ university students.',
     features: ['Resend API & OTPs', 'Cloudinary CDN (30% faster)', 'Real-time PWA Chat'],
     tags: ['React', 'Node.js', 'MongoDB'],
@@ -71,27 +77,18 @@ export const projects = [
   {
     title: 'C++ Vector Database & RAG Engine',
     icon: Bot,
-    shot: 'shot-neural',
+    image: vectorDbImg,
     text: 'A multi-threaded C++ Vector Database using HNSW and KD-Tree algorithms to achieve O(log N) search complexity across 10,000+ embeddings.',
     features: ['Local RAG Pipeline', 'Sub-2s responses via Ollama', 'cpp-httplib REST API'],
     tags: ['C++', 'AI/ML', 'Algorithms'],
     github: 'https://github.com/Pratham2411/my_ai',
     live: null
   },
-  {
-    title: 'Packet Analyzer',
-    icon: Activity,
-    shot: 'shot-circuit',
-    text: 'A network utility for capturing and analyzing packet data across networks to monitor traffic and ensure security.',
-    features: ['Packet sniffing', 'Protocol analysis', 'Deep Packet Inspection'],
-    tags: ['Python', 'Networking', 'Security'],
-    github: 'https://github.com/Pratham2411/Packet_analyzer',
-    live: null
-  },
+
   {
     title: 'Interactive Question Sheet',
     icon: BookOpen,
-    shot: 'shot-roadmap',
+    image: sheetImg,
     text: 'A structured, single-page application to manage and track programming questions organized by topics and subtopics.',
     features: ['Drag-and-drop reordering', 'Zustand State Management', 'Real-time search'],
     tags: ['React', 'Zustand', 'Vite'],
@@ -101,7 +98,7 @@ export const projects = [
   {
     title: 'Frontend Mini Projects',
     icon: LayoutGrid,
-    shot: 'shot-grid',
+    image: miniImg,
     text: 'A collection of interactive web applications and UI components built to master DOM manipulation and frontend design.',
     features: ['Interactive UIs', 'DOM Manipulation', 'Responsive layouts'],
     tags: ['HTML', 'CSS', 'JavaScript'],
@@ -111,7 +108,7 @@ export const projects = [
   {
     title: 'Developer Portfolio (V2)',
     icon: Sparkles,
-    shot: 'shot-portfolio',
+    image: portfolioImg,
     text: 'This highly interactive, performance-optimized portfolio built with React and Framer Motion.',
     features: ['Command palette', 'Dynamic theming', 'Smooth animations'],
     tags: ['React', 'Framer Motion', 'Tailwind'],
@@ -134,16 +131,17 @@ export const profiles = [
 ];
 
 export const achievements = [
-  'National Science Olympiad (NSO) – Gold Medalist',
-  'Ranked in the Top 15 competitive programmers institution-wide at NIT Patna on Codolio',
-  'Secured 1st place at the Hackslash College Hackathon',
+  'Ranked Top 75 in Amazon HackOn 6.0 out of 70,000+ participants',
   'Shortlisted for the Digital Specialist Engineer (DSE) role at Infosys',
-  'District Topper (Class 12th)',
+  'Secured 1st place at the Hackslash College Hackathon',
+  'Ranked in the Top 15 competitive programmers institution-wide at NIT Patna on Codolio',
   'Solved 1500+ DSA & CP problems',
+  'National Science Olympiad (NSO) – Gold Medalist',
+  'District Topper (Class 12th)',
 ];
 
 export const experience = [
-  ['Web Developer Intern', Code2, 'Spearheaded React components (reducing CLS by 15%) and integrated REST APIs to cut latency by 20% at InternPe.'],
+  ['Web Developer Intern', Code2, 'Built responsive React components, integrated backend REST APIs, and resolved UI bugs to improve the overall user experience at InternPe.'],
   ['Campus Ambassador', BookOpen, 'Hosted DSA workshops for HackerRank & GfG, cultivating algorithmic thinking for university peers.'],
   ['Educational Volunteer (NSS) & GDSC', Users, 'Mentored 500+ students and architected community software solutions.'],
 ];

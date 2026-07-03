@@ -67,7 +67,13 @@ export function ProjectCard({ project, index }) {
   const Icon = project.icon;
   return (
     <motion.article className="project-card" variants={reveal(index * 0.045)} initial="hidden" whileInView="show" viewport={{ once: true }} whileHover={{ y: -9 }}>
-      <div className={`project-shot ${project.shot}`}><Icon /><i /><i /><i /></div>
+      <div className="project-shot">
+        {project.image ? (
+          <img src={project.image} alt={project.title} />
+        ) : (
+          <div className={`project-shot-bg ${project.shot}`}><Icon /><i /><i /><i /></div>
+        )}
+      </div>
       <div className="project-body">
         <h3>{project.title}</h3>
         <p>{project.text}</p>
