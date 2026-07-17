@@ -1,9 +1,7 @@
 import {
-  Award,
   BookOpen,
   Bot,
   Braces,
-  Briefcase,
   Code2,
   Cpu,
   Database,
@@ -13,12 +11,11 @@ import {
   Linkedin,
   Mail,
   Instagram,
+  Network,
   Sparkles,
   Terminal,
   Trophy,
   Users,
-  Zap,
-  Activity,
   LayoutGrid
 } from 'lucide-react';
 
@@ -27,17 +24,25 @@ import vectorDbImg from '../assets/projects/vectordb.png';
 import sheetImg from '../assets/projects/sheet.png';
 import miniImg from '../assets/projects/mini.png';
 import portfolioImg from '../assets/projects/portfolio.png';
+import netsentryImg from '../assets/projects/netsentry.png';
 
-export const sections = ['home', 'about', 'skills', 'projects', 'cp', 'achievements', 'experience', 'contact'];
+export const sections = ['home', 'about', 'skills', 'projects', 'experience', 'cp', 'achievements', 'contact'];
 export const nav = [
   ['Home', 'home'],
   ['About', 'about'],
   ['Skills', 'skills'],
   ['Projects', 'projects'],
+  ['Experience', 'experience'],
   ['CP', 'cp'],
   ['Achievements', 'achievements'],
-  ['Experience', 'experience'],
   ['Contact', 'contact'],
+];
+
+export const heroRoles = [
+  'Competitive Programmer',
+  'Full Stack Developer',
+  'C++ Systems Builder',
+  'Problem Solver',
 ];
 
 export const socials = [
@@ -47,20 +52,27 @@ export const socials = [
   ['Instagram', 'https://www.instagram.com/pratham_raj_2411', Instagram],
 ];
 
+export const education = {
+  school: 'National Institute of Technology Patna',
+  degree: 'B.Tech in Electrical Engineering',
+  period: 'Aug 2023 – May 2027',
+  location: 'Patna, India',
+};
+
 export const aboutStats = [
-  ['1500+', 'DSA Problems Solved', Code2],
-  ['Knight', 'LeetCode Badge', Trophy],
+  ['1500+', 'Problems Solved', Code2],
+  ['2000+', 'LeetCode Rating', Trophy],
   ['NIT Patna', 'Electrical Engineering \'27', GraduationCap],
-  ['500+', 'Students taught', Users],
+  ['500+', 'Students Mentored', Users],
 ];
 
 export const skills = [
   ['Languages', Code2, ['C/C++', 'Python', 'Java', 'JavaScript', 'TypeScript']],
-  ['Frontend', Layers3, ['HTML5', 'CSS3', 'React.js', 'Tailwind CSS', 'Next.js']],
-  ['Backend & Systems', Database, ['Node.js', 'Express.js', 'RESTful APIs', 'Socket Programming']],
+  ['Frontend', Layers3, ['React.js', 'Redux', 'Zustand', 'Tailwind CSS', 'Next.js', 'PWA']],
+  ['Backend & APIs', Database, ['Node.js', 'Express.js', 'REST APIs', 'JWT', 'OAuth 2.0', 'Sockets']],
   ['Core CS', Braces, ['DSA', 'OOP', 'OS', 'Networks', 'System Design', 'Multi-threading']],
-  ['Tools & Cloud', Terminal, ['Git', 'Vercel', 'MongoDB', 'MySQL', 'Linux']],
-  ['Comfort Zone', Cpu, ['Problem Solving', 'Competitive Programming', 'System Thinking']],
+  ['Databases & Cloud', Terminal, ['MongoDB', 'MySQL', 'Redis', 'Cloudinary', 'Vercel', 'Docker']],
+  ['Strengths', Cpu, ['Competitive Programming', 'Problem Solving', 'Code Review', 'CI/CD']],
 ];
 
 export const projects = [
@@ -68,30 +80,39 @@ export const projects = [
     title: 'NIT Patna Marketplace',
     icon: Database,
     image: marketImg,
-    text: 'A full-stack campus marketplace using the MERN stack. Secured via JWT with Role-Based Access Control to serve 1,000+ university students.',
-    features: ['Resend API & OTPs', 'Cloudinary CDN (30% faster)', 'Real-time PWA Chat'],
+    text: 'Full-stack campus marketplace on the MERN stack with JWT auth, OTP-verified @nitp.ac.in signup, and role-based access for 1,000+ students.',
+    features: ['Resend API & OTP verification', 'Cloudinary CDN image pipeline', 'PWA chat with read receipts'],
     tags: ['React', 'Node.js', 'MongoDB'],
     github: 'https://github.com/Pratham2411/nit_patna_market',
     live: 'https://nit-patna-market.vercel.app'
   },
   {
-    title: 'C++ Vector Database & RAG Engine',
+    title: 'VectorForge — C++ Vector DB & RAG',
     icon: Bot,
     image: vectorDbImg,
-    text: 'A multi-threaded C++ Vector Database using HNSW and KD-Tree algorithms to achieve O(log N) search complexity across 10,000+ embeddings.',
-    features: ['Local RAG Pipeline', 'Sub-2s responses via Ollama', 'cpp-httplib REST API'],
-    tags: ['C++', 'AI/ML', 'Algorithms'],
-    github: 'https://github.com/Pratham2411/my_ai',
+    text: 'Multi-threaded vector database with HNSW, KD-Tree, and brute-force K-NN search. Local RAG pipeline via Ollama with a 15-route REST API.',
+    features: ['HNSW graph (M=16, efsearch=50)', 'Ollama embeddings + Llama 3.2', 'PCA scatter-plot visualization'],
+    tags: ['C++17', 'HNSW', 'RAG'],
+    github: 'https://github.com/Pratham2411/VectorForge',
     live: null
   },
-
+  {
+    title: 'NetSentry — Deep Packet Inspection',
+    icon: Network,
+    image: netsentryImg,
+    text: 'Multi-threaded DPI engine parsing PCAP captures, inspecting TCP/UDP payloads at Layer 4–7, and extracting TLS SNI to classify encrypted traffic.',
+    features: ['Producer-consumer pipeline', 'Consistent-hash flow affinity', '100% blocking accuracy on test PCAPs'],
+    tags: ['C++17', 'libpcap', 'Multi-threading'],
+    github: 'https://github.com/Pratham2411/NetSentry',
+    live: null
+  },
   {
     title: 'Interactive Question Sheet',
     icon: BookOpen,
     image: sheetImg,
-    text: 'A structured, single-page application to manage and track programming questions organized by topics and subtopics.',
-    features: ['Drag-and-drop reordering', 'Zustand State Management', 'Real-time search'],
-    tags: ['React', 'Zustand', 'Vite'],
+    text: 'SPA for managing programming questions by topic and subtopic — built during my InternPe internship with drag-and-drop and progress tracking.',
+    features: ['@dnd-kit reordering', 'Zustand state management', 'Firebase auth + localStorage sync'],
+    tags: ['React 19', 'Zustand', 'Tailwind'],
     github: 'https://github.com/Pratham2411/interactive-question-sheet',
     live: 'https://interactive-question-sheet-weld.vercel.app/'
   },
@@ -99,28 +120,28 @@ export const projects = [
     title: 'Frontend Mini Projects',
     icon: LayoutGrid,
     image: miniImg,
-    text: 'A collection of interactive web applications and UI components built to master DOM manipulation and frontend design.',
-    features: ['Interactive UIs', 'DOM Manipulation', 'Responsive layouts'],
+    text: 'Collection of interactive web apps and UI components for practicing DOM manipulation, responsive layouts, and frontend patterns.',
+    features: ['Interactive UIs', 'DOM manipulation', 'Responsive layouts'],
     tags: ['HTML', 'CSS', 'JavaScript'],
     github: 'https://github.com/Pratham2411/Web-Dev-Learning/tree/main/Mini-Projects/Projects',
     live: 'https://pratham2411.github.io/Web-Dev-Learning/Mini-Projects/Projects/'
   },
   {
-    title: 'Developer Portfolio (V2)',
+    title: 'Developer Portfolio',
     icon: Sparkles,
     image: portfolioImg,
-    text: 'This highly interactive, performance-optimized portfolio built with React and Framer Motion.',
-    features: ['Command palette', 'Dynamic theming', 'Smooth animations'],
+    text: 'This site — React + Vite with Framer Motion animations, a command palette, light/dark theme, and a working contact form.',
+    features: ['Scroll progress bar', 'Cmd+K navigation', 'Web3Forms contact'],
     tags: ['React', 'Framer Motion', 'Tailwind'],
     github: 'https://github.com/Pratham2411/my_portfolio',
-    live: 'https://my-portfolio-nine-dusky-pwkmvayvdw.vercel.app'
+    live: null
   },
 ];
 
 export const cpStats = [
-  ['Total Problems', '1,500+', 'across 4 platforms'],
-  ['CF Max Rating', '1,250+', 'Pupil'],
-  ['LeetCode', '2,000+', 'Knight Badge'],
+  ['Problems Solved', '1500+', 'across LeetCode, Codeforces, CodeChef & GfG'],
+  ['LeetCode', '2000+', 'Knight badge rating'],
+  ['Codeforces', '1250+', 'Pupil'],
 ];
 
 export const profiles = [
@@ -132,16 +153,45 @@ export const profiles = [
 
 export const achievements = [
   'Ranked Top 75 in Amazon HackOn 6.0 out of 70,000+ participants',
-  'Shortlisted for the Digital Specialist Engineer (DSE) role at Infosys',
-  'Secured 1st place at the Hackslash College Hackathon',
-  'Ranked in the Top 15 competitive programmers institution-wide at NIT Patna on Codolio',
-  'Solved 1500+ DSA & CP problems',
-  'National Science Olympiad (NSO) – Gold Medalist',
+  'Shortlisted for Digital Specialist Engineer (DSE) at Infosys',
+  '1st place at Hackslash College Hackathon',
+  'Top 10 competitive programmers institution-wide at NIT Patna on Codolio',
+  'Knight badge (2000+ rating) on LeetCode, 3-Star on CodeChef, Pupil on Codeforces',
+  'National Science Olympiad (NSO) — Gold Medalist',
   'District Topper (Class 12th)',
 ];
 
 export const experience = [
-  ['Web Developer Intern', Code2, 'Built responsive React components, integrated backend REST APIs, and resolved UI bugs to improve the overall user experience at InternPe.'],
-  ['Campus Ambassador', BookOpen, 'Hosted DSA workshops for HackerRank & GfG, cultivating algorithmic thinking for university peers.'],
-  ['Educational Volunteer (NSS) & GDSC', Users, 'Mentored 500+ students and architected community software solutions.'],
+  {
+    title: 'Web Developer Intern',
+    org: 'InternPe',
+    period: 'May 2026 – Jul 2026',
+    location: 'Remote',
+    icon: Code2,
+    text: 'Built the Interactive Question Sheet SPA with React 19, Zustand, and @dnd-kit. Deployed on Vercel with Firebase auth and localStorage persistence.',
+  },
+  {
+    title: 'Campus Ambassador',
+    org: 'HackerRank & GeeksforGeeks',
+    period: '2024 – Present',
+    location: 'NIT Patna',
+    icon: BookOpen,
+    text: 'Organized DSA workshops and competitive programming sessions, mentoring peers in algorithmic thinking and contest preparation.',
+  },
+  {
+    title: 'Educational Volunteer',
+    org: 'NSS (Sankalp)',
+    period: '2024 – Present',
+    location: 'NIT Patna',
+    icon: Users,
+    text: 'Instructed 500+ students through community-driven educational outreach programs.',
+  },
+  {
+    title: 'Technical Contributor',
+    org: 'Google Developer Student Clubs',
+    period: '2024 – Present',
+    location: 'NIT Patna',
+    icon: Users,
+    text: 'Collaborated on open-source software solutions and developer community initiatives at GDSC NIT Patna.',
+  },
 ];

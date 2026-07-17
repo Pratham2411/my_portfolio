@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import React, { useEffect, useRef, useState } from 'react';
+import { motion, AnimatePresence, useInView } from 'framer-motion';
 import { Command, X, Menu, Sun, Moon } from 'lucide-react';
 import { nav } from '../data/content';
 
@@ -40,7 +40,6 @@ export function Loader() {
   return (
     <motion.div className="loader" exit={{ opacity: 0, transition: { duration: 0.35 } }}>
       <motion.div animate={{ rotate: 360 }} transition={{ repeat: Infinity, duration: 1.2, ease: 'linear' }}>PR</motion.div>
-      <p>initializing signal</p>
     </motion.div>
   );
 }
@@ -51,6 +50,11 @@ export function Background() {
       <div className="grid-bg" />
       <div className="glow glow-a" />
       <div className="glow glow-b" />
+      <div className="particles" aria-hidden="true">
+        {Array.from({ length: 18 }).map((_, i) => (
+          <span key={i} style={{ '--i': i }} />
+        ))}
+      </div>
     </div>
   );
 }
@@ -58,7 +62,6 @@ export function Background() {
 export function CursorAura() {
   const [p, setP] = useState({ x: -300, y: -300 });
   useEffect(() => {
-    // Debounce or requestAnimationFrame to improve performance
     let raf;
     const move = (event) => {
       if (raf) cancelAnimationFrame(raf);
@@ -69,7 +72,6 @@ export function CursorAura() {
     window.addEventListener('pointermove', move);
     return () => window.removeEventListener('pointermove', move);
   }, []);
-  // Removed spring to reduce JS thread load, let CSS transition handle it if needed
   return <motion.div className="cursor-aura" animate={{ x: p.x - 130, y: p.y - 130 }} transition={{ duration: 0 }} />;
 }
 
@@ -91,4 +93,59 @@ export function reveal(delay = 0) {
     hidden: { opacity: 0, y: 24 },
     show: { opacity: 1, y: 0, transition: { duration: 0.62, delay, ease: 'easeOut' } },
   };
+}
+
+export function CountUp({ value, duration = 1.4 }) {
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true, margin: '-40px' });
+  const [display, setDisplay] = useState(value);
+
+  useEffect(() => {
+    const match = value.match(/^(\d[\d,]*)(.*)$/);
+    if (!match || !inView) {
+      setDisplay(value);
+      return;
+    }
+
+    const target = parseInt(match[1].replace(/,/g, ''), 10);
+    const suffix = match[2];
+    const start = performance.now();
+
+    const tick = (now) => {
+      const progress = Math.min((now - start) / (duration * 1000), 1);
+      const eased = 1 - (1 - progress) ** 3;
+      const current = Math.round(target * eased);
+      setDisplay(`${current.toLocaleString()}${suffix}`);
+      if (progress < 1) requestAnimationFrame(tick);
+    };
+
+    requestAnimationFrame(tick);
+  }, [value, duration, inView]);
+
+  return <span ref={ref}>{display}</span>;
+}
+
+export function TypingRoles({ roles }) {
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => setIndex((i) => (i + 1) % roles.length), 3200);
+    return () => clearInterval(timer);
+  }, [roles.length]);
+
+  return (
+    <p className="typing" aria-live="polite">
+      <AnimatePresence mode="wait">
+        <motion.span
+          key={roles[index]}
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -10 }}
+          transition={{ duration: 0.35 }}
+        >
+          {roles[index]}
+        </motion.span>
+      </AnimatePresence>
+    </p>
+  );
 }
