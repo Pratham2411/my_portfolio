@@ -20,13 +20,16 @@ import resumePdf from '../../assets/resume/pratham_resume.pdf';
 
 export function Hero() {
   return (
-    <section id="home" className="hero">
+    <section id="home" className="hero" aria-label="Introduction — Pratham Raj, Full Stack Developer & Competitive Programmer">
       <motion.div className="hero-copy" initial={{ opacity: 0, y: 26 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
         <div className="terminal-window">
           <div><i /><i /><i /><span>~/pratham — zsh</span></div>
           <p><b>$ whoami</b><br />pratham_raj — NIT Patna — EE &apos;27</p>
         </div>
         <h1>Hi, I&apos;m <span>Pratham Raj.</span></h1>
+        <noscript>
+          <p>Full Stack Developer & Competitive Programmer | B.Tech EE at NIT Patna | 1500+ DSA problems solved | Knight on LeetCode (2000+ rating) | pratham2411</p>
+        </noscript>
         <TypingRoles roles={heroRoles} />
         <p className="hero-text">
           Electrical Engineering undergrad at NIT Patna. I build full-stack web apps,
@@ -56,9 +59,9 @@ export function Hero() {
   );
 }
 
-export function Section({ id, label, title, subtitle, children }) {
+export function Section({ id, label, title, subtitle, children, ariaLabel }) {
   return (
-    <section id={id}>
+    <section id={id} aria-label={ariaLabel}>
       <motion.div className="section-inner" variants={reveal()} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.16 }}>
         <p className="kicker">// {label}</p>
         <h2>{title}</h2>
@@ -105,7 +108,7 @@ export function ProjectCard({ project, index }) {
 
 export function AboutSection() {
   return (
-    <Section id="about" label="about" title={<>Who I <span>am.</span></>}>
+    <Section id="about" label="about" title={<>Who I <span>am.</span></>} ariaLabel="About Pratham Raj — Education, skills, and background">
       <div className="about-layout">
         <Card className="about-copy">
           <p>
@@ -271,16 +274,18 @@ export function AchievementsSection() {
 
 export function ContactSection() {
   return (
-    <Section id="contact" label="contact" title={<>Get in <span>touch.</span></>}>
+    <Section id="contact" label="contact" title={<>Get in <span>touch.</span></>} ariaLabel="Contact Pratham Raj">
       <div className="contact-layout">
         <Card>
-          {socials.map(([label, href, Icon]) => (
-            <a className="contact-line" key={label} href={href} target={href.startsWith('http') ? '_blank' : undefined} rel="noreferrer">
-              <Icon />
-              <span>{label}</span>
-              <small>{href.replace('mailto:', '')}</small>
-            </a>
-          ))}
+          <address>
+            {socials.map(([label, href, Icon]) => (
+              <a className="contact-line" key={label} href={href} target={href.startsWith('http') ? '_blank' : undefined} rel="noreferrer">
+                <Icon />
+                <span>{label}</span>
+                <small>{href.replace('mailto:', '')}</small>
+              </a>
+            ))}
+          </address>
         </Card>
         <form className="form" action="https://api.web3forms.com/submit" method="POST">
           <input type="hidden" name="access_key" value="3738a27d-ce0f-480e-8812-8f1efb629d11" />

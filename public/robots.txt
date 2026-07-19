@@ -1,0 +1,7 @@
+# robots.txt for pratham2411.online
+User-agent: *
+Allow: /
+Disallow: /api/
+
+# Sitemap
+Sitemap: https://pratham2411.online/sitemap.xml
