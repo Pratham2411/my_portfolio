@@ -289,9 +289,13 @@ export function ContactSection() {
         </Card>
         <form className="form" action="https://api.web3forms.com/submit" method="POST">
           <input type="hidden" name="access_key" value="3738a27d-ce0f-480e-8812-8f1efb629d11" />
-          <input name="name" placeholder="Your name" required />
-          <input name="email" type="email" placeholder="Email address" required />
-          <textarea name="message" rows="6" placeholder="Your message" required />
+          <input type="hidden" name="subject" value="New message from pratham2411.online" />
+          <input type="hidden" name="redirect" value="https://www.pratham2411.online/" />
+          {/* Honeypot — hidden from humans, bots fill it and get rejected */}
+          <input type="checkbox" name="botcheck" className="hidden" style={{ display: 'none' }} tabIndex={-1} autoComplete="off" />
+          <input name="name" placeholder="Your name" required maxLength={100} autoComplete="name" />
+          <input name="email" type="email" placeholder="Email address" required maxLength={320} autoComplete="email" />
+          <textarea name="message" rows={6} placeholder="Your message" required maxLength={5000} />
           <button className="primary" type="submit"><Send size={18} /> Send Message</button>
         </form>
       </div>
