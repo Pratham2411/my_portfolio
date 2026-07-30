@@ -154,14 +154,6 @@ button { cursor: pointer; }
   font: 900 23px Space Grotesk;
   box-shadow: 0 0 56px rgba(16, 231, 176, 0.2);
 }
-.loader p {
-  position: absolute;
-  margin-top: 136px;
-  color: #6b746f;
-  font: 700 11px JetBrains Mono;
-  letter-spacing: 0.34em;
-  text-transform: uppercase;
-}
 
 .nav {
   position: fixed;

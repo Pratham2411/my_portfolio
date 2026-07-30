@@ -53,7 +53,6 @@ export function Hero() {
         >
           <img src={profilePic} alt="Pratham Raj" className="profile-pic" />
         </motion.div>
-        <span>Open to internships</span>
       </motion.div>
     </section>
   );

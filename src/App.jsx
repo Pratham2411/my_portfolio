@@ -25,7 +25,7 @@ export default function App() {
   const progress = useSpring(scrollYProgress, { stiffness: 140, damping: 24 });
 
   useEffect(() => {
-    const timer = window.setTimeout(() => setLoading(false), 750);
+    const timer = window.setTimeout(() => setLoading(false), 1600);
     return () => window.clearTimeout(timer);
   }, []);
 
