@@ -1,6 +1,6 @@
 # Pratham Raj Portfolio
 
-Modern personal portfolio for Pratham Raj, built with React, Vite, Tailwind CSS, Framer Motion, and Lucide icons.
+Modern personal portfolio  built with React, Vite, Tailwind CSS, Framer Motion, and Lucide icons.
 
 ```bash
 npm install
