@@ -163,12 +163,12 @@ export const achievements = [
 
 export const experience = [
   {
-    title: 'Web Developer Intern',
-    org: 'InternPe',
-    period: 'May 2026 – Jul 2026',
+    title: 'Software Engineering Contributor',
+    org: 'Snorkel AI (via HireArt)',
+    period: 'Jul 2026 – Present',
     location: 'Remote',
     icon: Code2,
-    text: 'Built the Interactive Question Sheet SPA with React 19, Zustand, and @dnd-kit. Deployed on Vercel with Firebase auth and localStorage persistence.',
+    text: 'Reviewed GitHub pull requests, authored outcome-based test suites, and collaborated on an adjudication workflow for AI coding-agent training datasets.',
   },
   {
     title: 'Campus Ambassador',
