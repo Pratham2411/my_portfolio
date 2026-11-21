@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { GitHubCalendar } from 'react-github-calendar';
-import { Download, ArrowRight, Github, ExternalLink, Award, Trophy, ArrowUp, Send, MapPin, Calendar, GraduationCap } from 'lucide-react';
+import { Download, ArrowRight, Github, ExternalLink, Award, Trophy, ArrowUp, Send, MapPin, Calendar, GraduationCap, CheckCircle2 } from 'lucide-react';
 import { go, Card, reveal, CountUp, TypingRoles } from './ui';
 import {
   socials,
@@ -272,6 +272,41 @@ export function AchievementsSection() {
 }
 
 export function ContactSection() {
+  const [status, setStatus] = useState('idle'); // 'idle' | 'submitting' | 'success' | 'error'
+  const [errorMessage, setErrorMessage] = useState('');
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatus('submitting');
+    setErrorMessage('');
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+        },
+        body: formData,
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        setStatus('success');
+        form.reset();
+      } else {
+        setStatus('error');
+        setErrorMessage(result.message || 'Something went wrong. Please try again.');
+      }
+    } catch {
+      setStatus('error');
+      setErrorMessage('Network error. Please try again or email directly.');
+    }
+  };
+
   return (
     <Section id="contact" label="contact" title={<>Get in <span>touch.</span></>} ariaLabel="Contact Pratham Raj">
       <div className="contact-layout">
@@ -286,16 +321,28 @@ export function ContactSection() {
             ))}
           </address>
         </Card>
-        <form className="form" action="https://api.web3forms.com/submit" method="POST">
+        <form className="form" onSubmit={handleSubmit}>
           <input type="hidden" name="access_key" value="3738a27d-ce0f-480e-8812-8f1efb629d11" />
           <input type="hidden" name="subject" value="New message from pratham2411.online" />
-          <input type="hidden" name="redirect" value="https://www.pratham2411.online/" />
           {/* Honeypot — hidden from humans, bots fill it and get rejected */}
           <input type="checkbox" name="botcheck" className="hidden" style={{ display: 'none' }} tabIndex={-1} autoComplete="off" />
           <input name="name" placeholder="Your name" required maxLength={100} autoComplete="name" />
           <input name="email" type="email" placeholder="Email address" required maxLength={320} autoComplete="email" />
           <textarea name="message" rows={6} placeholder="Your message" required maxLength={5000} />
-          <button className="primary" type="submit"><Send size={18} /> Send Message</button>
+          {status === 'success' && (
+            <div className="form-alert form-success">
+              <CheckCircle2 size={18} />
+              <span>Thank you! Your message has been sent successfully.</span>
+            </div>
+          )}
+          {status === 'error' && (
+            <div className="form-alert form-error">
+              <span>{errorMessage}</span>
+            </div>
+          )}
+          <button className="primary" type="submit" disabled={status === 'submitting'}>
+            <Send size={18} /> {status === 'submitting' ? 'Sending...' : 'Send Message'}
+          </button>
         </form>
       </div>
     </Section>

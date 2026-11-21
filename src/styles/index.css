@@ -968,6 +968,25 @@ textarea {
 input:focus,
 textarea:focus { border-color: rgba(16, 231, 176, 0.48); }
 
+.form-alert {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  font-size: 14px;
+}
+.form-success {
+  background: rgba(16, 185, 129, 0.15);
+  border: 1px solid rgba(16, 185, 129, 0.4);
+  color: #10e7b0;
+}
+.form-error {
+  background: rgba(239, 68, 68, 0.15);
+  border: 1px solid rgba(239, 68, 68, 0.4);
+  color: #f87171;
+}
+
 footer {
   display: flex;
   align-items: center;
@@ -1028,11 +1047,138 @@ footer p { margin: 9px 0 0; }
 }
 
 .theme-light {
-  --bg: #eef7f3;
-  --card: rgba(4, 9, 8, 0.78);
+  --bg: #f8fafc;
+  --card: rgba(255, 255, 255, 0.9);
+  --line: rgba(15, 23, 42, 0.08);
+  --muted: #64748b;
+  --text: #0f172a;
+  --shadow: 0 16px 36px -10px rgba(0, 0, 0, 0.08);
 }
-.theme-light .background { background: #eaf6f2; }
-.theme-light .grid-bg { opacity: 0.42; }
+.theme-light .background { background: #f1f5f9; }
+.theme-light .grid-bg {
+  opacity: 0.35;
+  background:
+    linear-gradient(rgba(15, 23, 42, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(15, 23, 42, 0.04) 1px, transparent 1px);
+}
+.theme-light h1,
+.theme-light h2,
+.theme-light h3,
+.theme-light .brand b,
+.theme-light .stat-card strong,
+.theme-light .education-inline strong,
+.theme-light .skill-card h3,
+.theme-light .project-body h3,
+.theme-light .experience-card h3,
+.theme-light .cp-stat strong,
+.theme-light footer strong,
+.theme-light .mobile-menu button {
+  color: #0f172a;
+}
+.theme-light .nav {
+  background: rgba(255, 255, 255, 0.85);
+  border-color: rgba(15, 23, 42, 0.08);
+}
+.theme-light .nav-links button {
+  color: #64748b;
+}
+.theme-light .nav-links button:hover,
+.theme-light .nav-links button.active {
+  color: #0f172a;
+}
+.theme-light .key-button,
+.theme-light .icon {
+  color: #64748b;
+  background: rgba(15, 23, 42, 0.03);
+}
+.theme-light .key-button:hover,
+.theme-light .icon:hover {
+  color: #0f172a;
+  background: rgba(15, 23, 42, 0.06);
+}
+.theme-light .hero-text,
+.theme-light .about-copy p,
+.theme-light .section-subtitle,
+.theme-light .project-body p,
+.theme-light .experience-card p,
+.theme-light .cp-stat p,
+.theme-light .timeline-item p,
+.theme-light .education-inline span {
+  color: #475569;
+}
+.theme-light .about-copy p:first-child {
+  color: #1e293b;
+}
+.theme-light .card,
+.theme-light .skill-card,
+.theme-light .project-card,
+.theme-light .profile-card,
+.theme-light .timeline-item,
+.theme-light .form {
+  background: rgba(255, 255, 255, 0.9);
+  border-color: rgba(15, 23, 42, 0.08);
+}
+.theme-light .chips span {
+  background: rgba(15, 23, 42, 0.04);
+  color: #334155;
+  border-color: rgba(15, 23, 42, 0.08);
+}
+.theme-light .hero-actions .ghost {
+  color: #0f172a;
+  border-color: rgba(15, 23, 42, 0.12);
+}
+.theme-light .hero-actions .ghost:hover {
+  background: rgba(15, 23, 42, 0.04);
+}
+.theme-light input,
+.theme-light textarea {
+  color: #0f172a;
+  background: rgba(15, 23, 42, 0.03);
+  border-color: rgba(15, 23, 42, 0.1);
+}
+.theme-light input::placeholder,
+.theme-light textarea::placeholder {
+  color: #94a3b8;
+}
+.theme-light .contact-line {
+  color: #0f172a;
+}
+.theme-light .contact-line small {
+  color: #64748b;
+}
+.theme-light .kicker {
+  color: #64748b;
+  background: rgba(15, 23, 42, 0.04);
+}
+.theme-light .mobile-menu {
+  background: rgba(255, 255, 255, 0.96);
+  border-color: rgba(15, 23, 42, 0.1);
+}
+.theme-light .mobile-menu button {
+  color: #0f172a;
+}
+.theme-light .mobile-menu button:hover {
+  background: rgba(15, 23, 42, 0.05);
+}
+.theme-light .palette {
+  background: #ffffff;
+  color: #0f172a;
+  border-color: rgba(15, 23, 42, 0.1);
+}
+.theme-light .palette-grid button {
+  color: #0f172a;
+  background: rgba(15, 23, 42, 0.03);
+}
+.theme-light .profile-card span {
+  color: #0f172a;
+}
+.theme-light .profile-card p {
+  color: #64748b;
+}
+.theme-light .loader {
+  background: #f1f5f9;
+  color: #0f172a;
+}
 
 @media (max-width: 1100px) {
   .nav-links { display: none; }
