@@ -15,7 +15,7 @@ import {
   education,
   heroRoles,
 } from '../data/content';
-import profilePic from '../../assets/images/profile.jpeg';
+import profilePic from '../../assets/images/profile.webp';
 import resumePdf from '../../assets/resume/pratham_resume.pdf';
 
 export function Hero() {
